@@ -71,7 +71,8 @@ public class BlockLazer extends BlockContainer{
 				tileEntityLazer.length++;
 			}
 		}
-		if(tileEntityLazer.length != length && !world.isRemote){
+		if(tileEntityLazer.length != length && !world.isRemote {
+			@SideOnly(Side.CLIENT)
 			player.addChatMessage(new ChatComponentTranslation("msg.lazerlength." + (tileEntityLazer.length > length ? "increase" : "decrease")).appendText(" " + tileEntityLazer.length));
 		}
 		return true;
